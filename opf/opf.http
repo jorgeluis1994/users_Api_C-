@@ -1,0 +1,6 @@
+@opf_HostAddress = http://localhost:5279
+
+GET {{opf_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
