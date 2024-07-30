@@ -32,3 +32,4 @@ C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\obj\Debug\net8.0\opf.pdb
 C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\obj\Debug\net8.0\opf.genruntimeconfig.cache
 C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\obj\Debug\net8.0\ref\opf.dll
 C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\bin\Debug\net8.0\Npgsql.dll
+C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\obj\Debug\net8.0\opf.sourcelink.json

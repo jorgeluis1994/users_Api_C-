@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 using System.Data;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace opf.controllers
 {
@@ -58,6 +59,64 @@ namespace opf.controllers
                 // Manejo de errores: retorna un código de estado 500 si ocurre una excepción.
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
+        }
+        [HttpPost]
+        public async Task<IActionResult> SaveUser([FromBody] User newUser)
+        {
+            try
+            {
+                // string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+                string query = @"
+                    INSERT INTO public.users (first_name, last_name, email, date_of_birth, created_at, ""password"", ids_establishments, ids)
+                    VALUES (@FirstName, @LastName, @Email, @DateOfBirth, @CreatedAt, @Password, @IdsEstablishments, @Ids);
+                ";
+
+                await using (var connection = new NpgsqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+                    await using (var command = new NpgsqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("FirstName", newUser.FirstName);
+                        command.Parameters.AddWithValue("LastName", newUser.LastName);
+                        command.Parameters.AddWithValue("Email", newUser.Email);
+                        command.Parameters.AddWithValue("DateOfBirth", newUser.DateOfBirth);
+                        command.Parameters.AddWithValue("CreatedAt", DateTime.UtcNow);
+                        command.Parameters.AddWithValue("Password", newUser.Password);
+
+                        // Convert the IdsEstablishments object to JSON string
+                        string jsonIdsEstablishments = JsonConvert.SerializeObject(newUser.IdsEstablishments);
+                        command.Parameters.AddWithValue("IdsEstablishments", NpgsqlTypes.NpgsqlDbType.Jsonb, jsonIdsEstablishments);
+
+                        // Convert the Ids object to JSON string
+                        string jsonIds = JsonConvert.SerializeObject(newUser.Ids);
+                        command.Parameters.AddWithValue("Ids", NpgsqlTypes.NpgsqlDbType.Jsonb, jsonIds);
+
+                        await command.ExecuteNonQueryAsync();
+                    }
+                }
+
+                return Ok("User saved successfully");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+     
+
+      public class User
+        {
+            public int Id { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public string Email { get; set; }
+            public DateTime DateOfBirth { get; set; }
+            public DateTime CreatedAt { get; set; }
+            public string Password { get; set; }
+            public object IdsEstablishments { get; set; }
+            public object Ids { get; set; }
         }
     }
 
