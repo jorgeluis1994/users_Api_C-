@@ -13,6 +13,7 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Security.Cryptography;
 
 namespace opf.controllers
 {
@@ -99,6 +100,9 @@ namespace opf.controllers
             try
             {
                 // string connectionString = _configuration.GetConnectionString("DefaultConnection");
+                // Hash the password before saving
+                string hashedPassword = HashPassword(newUser.Password);
+                Console.WriteLine(hashedPassword);
 
                 string query = @"
                     INSERT INTO public.users (first_name, last_name, email, date_of_birth, created_at, ""password"", ids_establishments, ids)
@@ -115,7 +119,7 @@ namespace opf.controllers
                         command.Parameters.AddWithValue("Email", newUser.Email);
                         command.Parameters.AddWithValue("DateOfBirth", newUser.DateOfBirth);
                         command.Parameters.AddWithValue("CreatedAt", DateTime.UtcNow);
-                        command.Parameters.AddWithValue("Password", newUser.Password);
+                        command.Parameters.AddWithValue("Password", hashedPassword);
                         // Convert the IdsEstablishments object to JSON string
                         string jsonIdsEstablishments = JsonConvert.SerializeObject(newUser.IdsEstablishments);
                         command.Parameters.AddWithValue("IdsEstablishments", NpgsqlTypes.NpgsqlDbType.Jsonb, jsonIdsEstablishments);
@@ -138,6 +142,9 @@ namespace opf.controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] User newUser)	{
             try {
+
+            // Hash the password before saving
+            // string hashedPassword = HashPassword(newUser.Password);
                 // Definir la consulta SQL con parámetros
             string query = "SELECT * FROM users WHERE email = @Email AND password = @Password";
             // Crear la tabla de datos para almacenar los resultados
@@ -181,6 +188,20 @@ namespace opf.controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
 
+        }
+        private static string HashPassword(string password)
+        {
+            using (var rng = new RNGCryptoServiceProvider())
+            {
+                byte[] salt = new byte[16];
+                rng.GetBytes(salt);
+                var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000);
+                byte[] hash = pbkdf2.GetBytes(20);
+                byte[] hashBytes = new byte[36];
+                Array.Copy(salt, 0, hashBytes, 0, 16);
+                Array.Copy(hash, 0, hashBytes, 16, 20);
+                return Convert.ToBase64String(hashBytes);
+            }
         }
 
      

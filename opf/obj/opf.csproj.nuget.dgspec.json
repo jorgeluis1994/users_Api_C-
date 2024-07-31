@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dot_Net\\users_Api_C-\\opf\\opf.csproj": {}
+    "C:\\Users\\sopor\\OneDrive\\Escritorio\\Dot_Net\\opf\\opf.csproj": {}
   },
   "projects": {
-    "D:\\Dot_Net\\users_Api_C-\\opf\\opf.csproj": {
+    "C:\\Users\\sopor\\OneDrive\\Escritorio\\Dot_Net\\opf\\opf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dot_Net\\users_Api_C-\\opf\\opf.csproj",
+        "projectUniqueName": "C:\\Users\\sopor\\OneDrive\\Escritorio\\Dot_Net\\opf\\opf.csproj",
         "projectName": "opf",
-        "projectPath": "D:\\Dot_Net\\users_Api_C-\\opf\\opf.csproj",
-        "packagesPath": "C:\\Users\\jorge\\.nuget\\packages\\",
-        "outputPath": "D:\\Dot_Net\\users_Api_C-\\opf\\obj\\",
+        "projectPath": "C:\\Users\\sopor\\OneDrive\\Escritorio\\Dot_Net\\opf\\opf.csproj",
+        "packagesPath": "C:\\Users\\sopor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sopor\\OneDrive\\Escritorio\\Dot_Net\\opf\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\sopor\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -85,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
