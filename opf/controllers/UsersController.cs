@@ -14,6 +14,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Security.Cryptography;
+using System.Diagnostics;
 
 namespace opf.controllers
 {
@@ -39,6 +40,10 @@ namespace opf.controllers
             var dataTable = new DataTable();
 
              var token = GenerateJwtToken("Jorgeortiz");
+
+             User user=new User();
+             Console.WriteLine(user);
+             
 
             try
             {
@@ -147,6 +152,8 @@ namespace opf.controllers
             // string hashedPassword = HashPassword(newUser.Password);
                 // Definir la consulta SQL con parámetros
             string query = "SELECT * FROM users WHERE email = @Email AND password = @Password";
+
+            Console.WriteLine("Pruebas");
             // Crear la tabla de datos para almacenar los resultados
             DataTable resultTable = new DataTable();
             await using (var connection = new NpgsqlConnection(_connectionString))
@@ -204,7 +211,24 @@ namespace opf.controllers
             }
         }
 
-     
+       [HttpPut("save_users")]
+       public async Task<ActionResult> Save([FromBody]List<Users> users){
+        try{
+    
+            // users.ForEach(x => Console.WriteLine("Id obj", x.Id));
+            users.ForEach(x => Console.WriteLine($"Id obj: {x.Id}"));
+            var listUsers=users.Select(x => x.Id).ToList();
+
+
+            
+            return Ok(new { listUsers });
+
+        }
+        catch(Exception ex){
+            return StatusCode(500, "");
+        }
+
+       }
 
       public class User
         {
