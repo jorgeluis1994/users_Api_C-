@@ -1,56 +1,45 @@
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]eleases/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-[Aa][Rr][Mm]32/
+# Archivos y carpetas generados por el sistema
+*.log
+*.tmp
+*.swp
 
-# NuGet
+# Archivos de la build
+bin/
+obj/
+
+# Archivos de usuario de Visual Studio
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Archivos de configuración de paquetes
 *.nupkg
 *.snupkg
-*.nuspec
-*.xml
 *.pdb
-*.psess
-*.vssscc
-*.vs/
-.vs/
-.vscode/
-.nuget/
+*.xml
+*.dll
+*.exe
 
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
+# Archivos de caché
+*.cache
+*.db
+*.sqlite
 
-# DotCover
-*.dotCover
+# Archivos de caché de Entity Framework
+*.efmigration
 
-# Rider
+# Configuración de IDE
 .idea/
-
-# User-specific files
+*.suo
 *.user
 *.userosscache
-*.suo
-*.userprefs
 
-# User-specific files (e.g. VS Code settings)
-*.code-workspace
+# Configuración de Rider
+.idea/
 
-# Log files
-*.log
-
-# Miscellaneous
-*.zip
-*.tar.gz
-*.rar
-*.7z
-*.tar
-*.dmg
-*.iso
-
-# Configuration files
-appsettings.Development.json
-appsettings.Local.json
+# Otros archivos y carpetas que quieras ignorar
+*.DS_Store
+*.vscode
+*.vs
