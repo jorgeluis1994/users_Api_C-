@@ -1,0 +1,56 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Aa][Rr][Mm]32/
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+*.xml
+*.pdb
+*.psess
+*.vssscc
+*.vs/
+.vs/
+.vscode/
+.nuget/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# DotCover
+*.dotCover
+
+# Rider
+.idea/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# User-specific files (e.g. VS Code settings)
+*.code-workspace
+
+# Log files
+*.log
+
+# Miscellaneous
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.tar
+*.dmg
+*.iso
+
+# Configuration files
+appsettings.Development.json
+appsettings.Local.json
