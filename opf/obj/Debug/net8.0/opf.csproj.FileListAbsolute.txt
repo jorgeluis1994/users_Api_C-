@@ -77,3 +77,12 @@ D:\Dot_Net\users_Api_C-\opf\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.d
 D:\Dot_Net\users_Api_C-\opf\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Dot_Net\users_Api_C-\opf\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\Dot_Net\users_Api_C-\opf\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\sopor\OneDrive\Escritorio\Dot_Net\opf\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
