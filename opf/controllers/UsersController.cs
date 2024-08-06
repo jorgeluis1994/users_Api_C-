@@ -98,8 +98,6 @@ namespace opf.controllers
         {
             try
             {
-                // string connectionString = _configuration.GetConnectionString("DefaultConnection");
-
                 string query = @"
                     INSERT INTO public.users (first_name, last_name, email, date_of_birth, created_at, ""password"", ids_establishments, ids)
                     VALUES (@FirstName, @LastName, @Email, @DateOfBirth, @CreatedAt, @Password, @IdsEstablishments, @Ids);
