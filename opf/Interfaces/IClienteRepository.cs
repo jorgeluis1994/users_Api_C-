@@ -9,6 +9,7 @@ namespace opf.Interfaces
     public interface IClienteRepository
     {
         Task<IEnumerable<Cliente>> GetClientesAsync();
+        Task<IEnumerable<Cliente>> GetClientesDapper();
         Task<Cliente> AddClienteAsync(Cliente cliente);
     }
 }

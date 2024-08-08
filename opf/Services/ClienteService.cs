@@ -17,9 +17,9 @@ namespace opf.Services
             _clienteRepository = clienteRepository;
         }
 
-        public async Task<IEnumerable<Cliente>> GetClientesAsync()
+        public async Task<IEnumerable<Cliente>> GetClientesDapper()
         {
-            return await _clienteRepository.GetClientesAsync();
+            return await _clienteRepository.GetClientesDapper();
         }
          public async Task<Cliente> GuardarClienteAsync(Cliente cliente)
         {

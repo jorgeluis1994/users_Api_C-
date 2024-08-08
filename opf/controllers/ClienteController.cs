@@ -23,7 +23,7 @@ namespace opf.controllers
         }
         [HttpGet]
         public async Task<IActionResult> GetUsers(){
-            return Ok(await _clienteService.GetClientesAsync());
+            return Ok(await _clienteService.GetClientesDapper());
    
         }
 
