@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace opf.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240806231452_NombreDeMigracion")]
-    partial class NombreDeMigracion
+    [Migration("20240808000624_CreateCliente")]
+    partial class CreateCliente
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

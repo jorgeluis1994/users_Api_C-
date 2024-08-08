@@ -8,7 +8,7 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Cuenta> Cuentas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
