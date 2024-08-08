@@ -14,7 +14,8 @@ namespace opf.Services
 
         private readonly ICuentaRepository _cuentaRepository;
         public CuentaService(ICuentaRepository cuentaRepository){
-            _cuentaRepository=cuentaRepository;
+            
+            _cuentaRepository=cuentaRepository; 
 
         }
 
