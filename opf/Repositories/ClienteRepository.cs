@@ -10,7 +10,6 @@ namespace opf.Repositories
         private readonly ApplicationDbContext _context;
         public ClienteRepository(ApplicationDbContext context){
             _context=context;
-
         }
 
         public async Task<Cliente> AddClienteAsync(Cliente cliente)

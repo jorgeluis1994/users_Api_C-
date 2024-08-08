@@ -49,6 +49,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services
     .AddScoped<IClienteRepository, ClienteRepository>()
     .AddScoped<ClienteService>();
+builder.Services
+    .AddScoped<ICuentaRepository, CuentaRepository>()
+    .AddScoped<CuentaService>();
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
