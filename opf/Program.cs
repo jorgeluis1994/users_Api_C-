@@ -5,8 +5,14 @@ using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using opf.Services;
+using opf.Interfaces;
+using opf.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+
 
 // Lee la configuración de JWT desde appsettings.json
 var jwtSettings = builder.Configuration.GetSection("Jwt");
@@ -39,6 +45,13 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 
+// builder.Services.AddScoped<ClienteService>();
+builder.Services
+    .AddScoped<IClienteRepository, ClienteRepository>()
+    .AddScoped<ClienteService>();
+builder.Services
+    .AddScoped<ICuentaRepository, CuentaRepository>()
+    .AddScoped<CuentaService>();
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -58,6 +71,10 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 // app.UseAuthorization();
 app.MapControllers();
+
+// Middleware de autenticación y autorización
+app.UseAuthentication();  // <- Añadir esta línea
+app.UseAuthorization();  // <- Asegúrate de que esto no esté comentado
 
 
 
